@@ -15,7 +15,7 @@ router.post('/reset', (req, res) => {
     lastReset.then(JSON.stringify).then((data) => {
         fs.writeFile(LAST_RESET_PATH, data);
     });
-    res.sendStatus(200);
+    res.send({ ok: true });
 });
 
 router.get('/lastreset', (req, res) => {
